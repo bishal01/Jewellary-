@@ -28,49 +28,44 @@
             <h1>Our Jewelry Collection</h1>
             <p>Discover timeless elegance and craftsmanship in every piece.</p>
         </header>
-
+        <br>
         <section class="gallery-grid">
-            <!-- Add your images -->
-            <a href="images/large1.jpg" class="gallery-item">
-                <img src="watch.jpg" alt="Elegant Necklace">
-            </a>
-            <a href="images/large2.jpg" class="gallery-item">
-                <img src="neck.jpg" alt="Diamond Ring">
-            </a>
-            <a href="images/large3.jpg" class="gallery-item">
-                <img src="earing.jpg" alt="Gold Earrings">
-            </a>
-            <a href="images/large4.jpg" class="gallery-item">
-                <img src="dd.jpg" alt="Silver Bracelet">
-            </a>
-            <a href="images/large1.jpg" class="gallery-item">
-                <img src="ear1.jpg" alt="Elegant Necklace">
-            </a>
-            <a href="images/large2.jpg" class="gallery-item">
-                <img src="ear2.jpg" alt="Diamond Ring">
-            </a>
-            <a href="images/large3.jpg" class="gallery-item">
-                <img src="ear3.jpg" alt="Gold Earrings">
-            </a>
-            <a href="images/large4.jpg" class="gallery-item">
-                <img src="earing.jpg" alt="Silver Bracelet">
-        
-        </a>   
-        
-        <a href="images/large1.jpg" class="gallery-item">
-            <img src="neck2.jpg" alt="Elegant Necklace">
+          <a href="watch.jpg" class="gallery-item">
+              <img src="watch.jpg" alt="Elegant Necklace">
+          </a>
+          <a href="neck.jpg" class="gallery-item">
+              <img src="neck.jpg" alt="Diamond Ring">
+          </a>
+          <a href="earing.jpg" class="gallery-item">
+              <img src="earing.jpg" alt="Gold Earrings">
+          </a>
+          <a href="dd.jpg" class="gallery-item">
+              <img src="dd.jpg" alt="Silver Bracelet">
+          </a>
+          <a href="ear1.jpg" class="gallery-item">
+              <img src="ear1.jpg" alt="Elegant Necklace">
+          </a>
+          <a href="ear2.jpg" class="gallery-item">
+              <img src="ear2.jpg" alt="Diamond Ring">
+          </a>
+          <a href="ear3.jpg" class="gallery-item">
+              <img src="ear3.jpg" alt="Gold Earrings">
+          </a>
+          <a href="earing.jpg" class="gallery-item">
+              <img src="earing.jpg" alt="Silver Bracelet">
+          </a>
+          <a href="l2.jpg" class="gallery-item">
+            <img src="l2.jpg" alt="Silver Bracelet">
         </a>
-        <a href="images/large2.jpg" class="gallery-item">
-            <img src="neck3.jpg" alt="Diamond Ring">
-        </a>
-        <a href="images/large3.jpg" class="gallery-item">
-            <img src="neck1.jpg" alt="Gold Earrings">
-        </a>
-        <a href="images/large4.jpg" class="gallery-item">
-            <img src="neck4.jpg" alt="Silver Bracelet">
-        </a>  
-        
-        </section>
+        <a href="l1.jpg" class="gallery-item">
+          <img src="l1.jpg" alt="Silver Bracelet">
+      </a>
+      </section>
+      
+      <div id="lightbox" class="lightbox">
+          <span class="close">&times;</span>
+          <img id="lightbox-image" src="" alt="">
+      </div>
     </main>
 
     <footer class="footer">
@@ -103,5 +98,60 @@
           </div>
         </div>
       </footer>
+
+<script>
+  const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.querySelector('.lightbox-image');
+const closeButton = document.querySelector('.lightbox-close');
+
+// Add click event to each gallery item
+galleryItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        const imgSrc = item.querySelector('img').src; // Get the image source
+        lightboxImage.src = imgSrc; // Set the lightbox image
+        lightbox.style.display = 'flex'; // Show the lightbox
+    });
+});
+
+// Add click event to the close button
+closeButton.addEventListener('click', () => {
+    lightbox.style.display = 'none'; // Hide the lightbox
+});
+
+// Close lightbox when clicking outside the image
+lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImage) {
+        lightbox.style.display = 'none';
+    }
+        // JavaScript to handle Lightbox functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const closeButton = document.querySelector(".lightbox .close");
+
+    // Add click event to gallery items
+    document.querySelectorAll(".gallery-item img").forEach(item => {
+        item.addEventListener("click", () => {
+            lightboxImage.src = item.src; // Set the image source
+            lightbox.style.display = "flex"; // Show lightbox
+        });
+    });
+
+    // Close the lightbox on close button click
+    closeButton.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    // Close the lightbox on clicking outside the image
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+});
+</script>
+
 </body>
 </html>

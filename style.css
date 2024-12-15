@@ -17,7 +17,7 @@ nav {
               inset -3px -3px 7px #ffffff,
               inset 3px 3px 5px #ceced1;
   position: relative; /* Ensure it’s positioned above other elements */
-  z-index: 2; /* Higher than .hero::before */
+  z-index: 100; /* Higher than .hero::before */
 }
 
 nav .menu{

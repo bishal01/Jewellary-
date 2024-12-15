@@ -18,7 +18,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.6); /* Darker overlay */
-    z-index: 1; /* Lower than the nav bar */
+    z-index: 0; /* Lower than the nav bar */
 }
 .hero-content {
     position: relative;
