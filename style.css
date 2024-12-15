@@ -19,9 +19,7 @@ nav {
   position: relative; /* Ensure it’s positioned above other elements */
   z-index: 2; /* Higher than .hero::before */
 }
-.logo{
-  color: #ffd700;
-}
+
 nav .menu{
   max-width: 1270px;
   margin: auto;
